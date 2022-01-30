@@ -1,30 +1,16 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { Box, Stack, Text, Icon, Link } from '@chakra-ui/react';
+import { Box, Stack } from '@chakra-ui/react';
+import { NavLink } from 'components/Context/Sidebar/NavLink';
+import { NavSection } from 'components/Context/Sidebar/NavSection';
 import { RiContactsLine, RiDashboardLine } from 'react-icons/ri';
 
 export function Sidebar() {
   return (
     <Box as="aside" w="64" mr="8">
       <Stack spacing="12" align="flex-start">
-        <Box>
-          <Text fontWeight="bold" color="gray.400" fontSize="small">
-            GERAL
-          </Text>
-          <Stack spacing="4" mt="8" align="stretch">
-            <Link display="flex" align="center">
-              <Icon as={RiDashboardLine} fontSize="20" />
-              <Text ml="4" fontWeight="medium">
-                Dashboard
-              </Text>
-            </Link>
-            <Link display="flex" align="center">
-              <Icon as={RiContactsLine} fontSize="20" />
-              <Text ml="4" fontWeight="medium">
-                Usuários
-              </Text>
-            </Link>
-          </Stack>
-        </Box>
+        <NavSection title="GERAL">
+          <NavLink icon={RiDashboardLine}>Dashboard</NavLink>
+          <NavLink icon={RiContactsLine}>Usuários</NavLink>
+        </NavSection>
       </Stack>
     </Box>
   );
