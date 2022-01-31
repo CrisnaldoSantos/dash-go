@@ -16,6 +16,7 @@ import {
 import { Header } from 'components/Structure/Header';
 import { Pagination } from 'components/Structure/Pagination';
 import { Sidebar } from 'components/Structure/Sidebar';
+import Link from 'next/link';
 import { RiAddLine } from 'react-icons/ri';
 
 export default function UserList() {
@@ -29,16 +30,17 @@ export default function UserList() {
             <Heading size="lg" fontWeight="normal">
               Usuários
             </Heading>
-
-            <Button
-              as="a"
-              size="sm"
-              fontSize="sm"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} />}
-            >
-              Criar Novo
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontSize="sm"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} />}
+              >
+                Criar Novo
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">

@@ -11,6 +11,7 @@ import {
 import { Input } from 'components/Form/Input';
 import { Header } from 'components/Structure/Header';
 import { Sidebar } from 'components/Structure/Sidebar';
+import Link from 'next/link';
 
 export default function CreateUser() {
   return (
@@ -42,7 +43,9 @@ export default function CreateUser() {
 
           <Flex justify="flex-end" mt="8">
             <HStack spacing="4">
-              <Button colorScheme="whiteAlpha">Cancelar</Button>
+              <Link href="/users" passHref>
+                <Button colorScheme="whiteAlpha">Cancelar</Button>
+              </Link>
               <Button colorScheme="pink">Salvar</Button>
             </HStack>
           </Flex>
